@@ -1,0 +1,115 @@
+{
+	"info": {
+		"_postman_id": "68b4fe95-2fad-4dcf-ad1b-ea9219b914ef",
+		"name": "Idea",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Middleware",
+			"item": [
+				{
+					"name": "GetIdeas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Schema",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Dgraph-AuthToken",
+						"value": "password",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "file",
+					"file": {
+						"src": "///wsl.localhost/Ubuntu-20.04/home/castello/repos/idea/idea-graph/schema.graphql"
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/admin/schema",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"admin",
+						"schema"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateIdea",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Dgraph-AuthToken",
+						"value": "password",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation {\r\n  addIdea(input: [{ title: \"other Titly stuff\", description: \"Stuff\"}]) {\r\n    idea {\r\n      title\r\n    }\r\n  }\r\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/graphql",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetIdeas",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Dgraph-AuthToken",
+						"type": "text",
+						"value": "password"
+					}
+				],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query {\r\n  queryIdea {\r\n    id\r\n    title\r\n  }\r\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/graphql",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
