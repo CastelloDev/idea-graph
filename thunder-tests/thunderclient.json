@@ -1,0 +1,27 @@
+[
+  {
+    "_id": "2471997c-92cb-4174-8f5c-6be333812e6c",
+    "colId": "2c8fab7b-1a70-46f9-b64c-5e4c1900f590",
+    "containerId": "",
+    "name": "Post schema",
+    "url": "localhost:8080/admin/schema",
+    "method": "POST",
+    "sortNum": 10000,
+    "created": "2022-08-08T13:57:13.371Z",
+    "modified": "2022-08-08T13:59:06.557Z",
+    "headers": [
+      {
+        "name": "X-Dgraph-AuthToken",
+        "value": "password"
+      }
+    ],
+    "params": [],
+    "body": {
+      "type": "binary",
+      "raw": "",
+      "form": [],
+      "binary": "..\\schema\\schema.graphql"
+    },
+    "tests": []
+  }
+]
