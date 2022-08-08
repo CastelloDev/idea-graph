@@ -1,6 +1,0 @@
-type Idea {
-  title: String!
-  description: String!
-  labels: [String]
-  Idea: [Idea]
-}

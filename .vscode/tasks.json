@@ -10,8 +10,15 @@
     },
     {
       "label": "Generate schema",
-      "type": "process",
-      "command": "echo \"\" >schema.graphql && find schema -name \"*.graphql\" -exec cat {} \\; >>schema.graphql"
+      "type": "shell",
+      "command": "./generate-schema.sh",
+      "presentation": {
+        "reveal": "silent",
+        "revealProblems": "onProblem",
+        "showReuseMessage": false,
+        "clear": true,
+        "close": true
+      }
     }
   ]
 }
