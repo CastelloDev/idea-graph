@@ -1,6 +1,7 @@
 type Idea {
+  id: ID!
   title: String!
   description: String!
   labels: [String]
-  Idea: [Idea]
+  ideas: [Idea]
 }
