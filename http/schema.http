@@ -1,0 +1,26 @@
+# POST schema
+POST /admin/schema HTTP/1.1
+Host: localhost:8080
+X-Dgraph-AuthToken: password
+Content-Type: application/octet-stream
+
+< ./../schema.graphql
+
+###
+# DROP ALL
+POST /alter HTTP/1.1
+Host: localhost:8080
+X-Dgraph-AuthToken: password
+Content-Type: application/octet-stream
+
+{"drop_all": true}
+
+###
+# DROP DATA
+POST /alter HTTP/1.1
+Host: localhost:8080
+X-Dgraph-AuthToken: password
+Content-Type: application/octet-stream
+
+{"drop_op": "DATA"}
+

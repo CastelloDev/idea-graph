@@ -1,7 +1,8 @@
 {
-    "recommendations": [
-        "mquandalle.graphql",
-        "esbenp.prettier-vscode",
-        "ms-azuretools.vscode-docker"
-    ]
+  "recommendations": [
+    "mquandalle.graphql",
+    "esbenp.prettier-vscode",
+    "ms-azuretools.vscode-docker",
+    "humao.rest-client"
+  ]
 }

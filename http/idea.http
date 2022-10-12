@@ -1,0 +1,44 @@
+###
+# Create idea
+POST /graphql HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
+
+mutation ($ideas: [AddIdeaInput!]!) {
+  addIdea(input: $ideas) {
+    idea {
+      title
+    }
+  }
+}
+
+< ./create-ideas.json
+
+###
+# Get ideas
+POST /graphql HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
+
+query {
+  queryIdea() {
+    id
+    title
+    description
+  }
+}
+
+###
+# Delete idea
+POST /graphql HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
+
+mutation {
+  deleteIdea(filter: {id: "0x2"}) {
+    msg
+  }
+}
