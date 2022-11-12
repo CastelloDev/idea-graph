@@ -27,6 +27,10 @@ query {
     id
     title
     description
+    position {
+      x
+      y
+    }
   }
 }
 

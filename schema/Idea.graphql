@@ -4,4 +4,5 @@ type Idea {
   description: String!
   labels: [String]
   ideas: [Idea]
+  position: Position!
 }

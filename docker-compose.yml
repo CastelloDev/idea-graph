@@ -3,7 +3,7 @@ services:
   zero:
     image: dgraph/dgraph:latest
     volumes:
-      - ./data:/dgraph
+      - ./data/zero:/dgraph
     networks:
       - idea-network
     ports:
@@ -16,7 +16,7 @@ services:
     environment:
       - DGRAPH_ALPHA_SECURITY=whitelist=10.0.0.0/8,172.0.0.0/8,192.168.0.0/16;token=password
     volumes:
-      - ./data:/dgraph
+      - ./data/alpha:/dgraph
     networks:
       - idea-network
     ports:
@@ -28,12 +28,12 @@ services:
   ratel:
     image: dgraph/ratel:v21.12.0
     ports:
-    - published: 8000
-      target: 8000
-      protocol: tcp
-      mode: host
+      - published: 8000
+        target: 8000
+        protocol: tcp
+        mode: host
     networks:
-    - idea-network
+      - idea-network
     restart: always
 
 networks:
